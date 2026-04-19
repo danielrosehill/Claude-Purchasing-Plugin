@@ -1,0 +1,12 @@
+{
+  "name": "purchasing",
+  "version": "1.0.0",
+  "description": "Claude Code plugin: purchasing workflow — intake, research, compare, evaluate, recommend, market-check, preference memory, and hardware-rig profiling primitives, with general/tech-procurement/recommendations variants.",
+  "author": {
+    "name": "Daniel Rosehill",
+    "url": "https://github.com/danielrosehill"
+  },
+  "repository": "https://github.com/danielrosehill/Claude-Purchasing-Plugin",
+  "license": "MIT",
+  "keywords": ["purchasing", "procurement", "comparison", "recommendations", "buying-decisions", "rig-planner"]
+}

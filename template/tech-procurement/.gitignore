@@ -1,0 +1,49 @@
+# Private user data
+private.md
+
+# Context files with personal information
+context/user-context.md
+context/budget.md
+context/business.md
+context/vendors.md
+
+# Machine profiles may contain serial numbers
+context/machines/
+
+# User inputs may contain screenshots with personal info
+inputs/*
+!inputs/.gitkeep
+!inputs/README.md
+
+# Cached data from web fetches
+data/pricing/
+data/specs/
+data/benchmarks/
+
+# Outputs may contain personalized estimates
+outputs/estimates/
+outputs/analysis/
+outputs/recommendations/
+outputs/reports/
+
+# Keep the directory structure
+!outputs/.gitkeep
+!outputs/README.md
+!data/.gitkeep
+!data/README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
