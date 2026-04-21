@@ -1,6 +1,6 @@
 {
   "name": "purchasing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Claude Code plugin: purchasing workflow — intake, research, compare, evaluate, recommend, market-check, preference memory, and hardware-rig profiling primitives, with general/tech-procurement/recommendations variants.",
   "author": {
     "name": "Daniel Rosehill",

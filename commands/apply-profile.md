@@ -100,7 +100,7 @@ Use `AskUserQuestion` with the 9 profiles as options + a "Combine two or more" o
 
 ## Using without standing preferences
 
-If the user has no Mem0 memory and no `~/.claude/shopping-preferences.md`, a buyer profile is the fastest way to give the agent *some* shopping posture for this purchase. Flow:
+If the user has no Mem0 memory and no `<plugin-data-dir>/shopping-preferences.md` (resolved via `$CLAUDE_USER_DATA` — see `/load-preferences`), a buyer profile is the fastest way to give the agent *some* shopping posture for this purchase. Flow:
 
 1. `/intake` (fills in per-purchase fields — what you're buying, must-haves, hard nos, budget)
 2. `/apply-profile` (picks a named archetype as a shortcut for priorities + heuristics)

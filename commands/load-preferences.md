@@ -2,6 +2,17 @@
 
 Load the user's standing shopping preferences (country, currency, trusted/avoided brands, markup threshold, risk tolerance, preferred vendors, etc.) into the current session so they can be applied during `/intake`, `/research`, and `/recommend`.
 
+## Migration from legacy path (one-time)
+
+Before resolving the data directory, check for legacy data at these paths:
+- `~/.claude/shopping-preferences.md`
+
+If a legacy file exists AND the corresponding file at the new path does NOT exist, move it to the new location and delete the legacy file. Tell the user: "Migrated shopping-preferences.md from ~/.claude/ to <new>."
+
+## Path resolution
+
+Resolve the plugin's data directory as `$CLAUDE_USER_DATA/purchasing/` if `CLAUDE_USER_DATA` is set; otherwise `$XDG_DATA_HOME/claude-plugins/purchasing/` if `XDG_DATA_HOME` is set; otherwise `~/.local/share/claude-plugins/purchasing/`. Create the directory if it doesn't exist. See the canonical convention in the `meta-tools:plugin-data-storage` skill. The local preferences file lives at `<plugin-data-dir>/shopping-preferences.md`.
+
 ## What "standing preferences" means
 
 Things that apply to **every** purchase the user makes — not to this specific one:
@@ -35,9 +46,9 @@ Use whichever read tool the installed Mem0 server exposes.
 
 ## Fallback 1: local file
 
-If Mem0 MCP is not available, check `~/.claude/shopping-preferences.md`. If present, read it and populate the snapshot section of `spec.md` from it.
+If Mem0 MCP is not available, check `<plugin-data-dir>/shopping-preferences.md`. If present, read it and populate the snapshot section of `spec.md` from it.
 
-Tell the user: "Mem0 MCP not detected. Loaded preferences from `~/.claude/shopping-preferences.md` instead. Install Mem0 MCP for cross-device persistence."
+Tell the user: "Mem0 MCP not detected. Loaded preferences from `<plugin-data-dir>/shopping-preferences.md` instead. Install Mem0 MCP for cross-device persistence."
 
 ## Fallback 2: prompt the user
 
